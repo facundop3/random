@@ -8,6 +8,12 @@
   max-width: 500px;
   border: 1px solid red;
   padding: .5em;
+  position: relative;
+  animation-name: animateMessage;
+  bottom: -1000px;
+  animation-delay: .5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 .MessageTitle{
@@ -19,4 +25,13 @@
 .MessageContent{
   padding-left: 3em;
   text-align: left;
+}
+
+@keyframes animateMessage{
+  from{
+    bottom: -1000px;
+  }
+  to{
+    bottom:0;
+  }
 }
