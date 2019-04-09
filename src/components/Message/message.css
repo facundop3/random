@@ -1,7 +1,22 @@
+/* @import url('../../assets/VT323/VT323-Regular.ttf?family=VT323'); */
+@font-face {
+  font-family: VT323;
+  src: url('../../assets/VT323/VT323-Regular.ttf');
+}
+
 .MessageContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 500px;
   border: 1px solid red;
+  padding: .5em;
+}
+
+.MessageTitle{
+  font-family: VT323;
+  text-align: left;
+  color: green;
+}
+
+.MessageContent{
+  padding-left: 3em;
+  text-align: left;
 }

@@ -10,7 +10,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.app-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
