@@ -1,0 +1,77 @@
+.fixIt {
+  position: fixed;
+  color: rebeccapurple;
+  transition: 1s;
+  /* Picture from : https://www.pexels.com/photo/photography-of-night-sky-733475/ */
+  background-image: url('../../assets/stars.jpg');
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  animation-fill-mode: forwards;
+}
+
+.rainbowBg {
+  /* Picture from :https://www.pexels.com/photo/rainbow-after-sunset-237250/ */
+  background-image: url('../../assets/rainbow4.jpg');
+}
+
+.cityBg{
+  /* Picture from: https://www.pexels.com/photo/illuminated-cityscape-against-blue-sky-at-night-316093/ */
+  background-image: url('../../assets/city.jpg');
+}
+
+.hackermanBg{
+  /* https://media.giphy.com/media/h8EFlReFJbZny/giphy.gif */
+  background-image: url('../../assets/hackerman.gif');
+  opacity: 0 !important;
+}
+
+@keyframes chickenLego {
+  0%{
+    transform: rotate(35deg) scale(0.5);
+    left: -200px;
+  }
+  10%{
+    left: calc(10% - 200px);
+    transform: rotate(-10deg) scale(0.5);
+  }
+  20%{
+    left: calc(20% - 200px);
+    transform: rotate(20deg) scale(0.5);
+  }
+  30%{
+    left: calc(30% - 200px);
+    transform: rotate(35deg) scale(0.6);
+  }
+  40%{
+    left: calc(40% - 200px);
+    transform: rotate(27deg)  scale(0.6);
+  }
+  50%{
+    left: calc(50% - 200px);
+    transform: rotate(37deg) scale(0.7);
+  }
+  60%{
+    left: calc(60% - 200px);
+    transform: rotate(45deg) scale(0.7);
+  }
+  70%{
+    left: calc(70% - 200px);
+    transform: rotate(36deg)  scale(0.6);
+  }
+  80%{
+    left: calc(80% - 200px);
+    transform: rotate(27deg)  scale(0.6);
+  }
+  90%{
+    left: calc(90% - 200px);
+    transform: rotate(-10deg) scale(0.5);
+  }
+  100%{
+    left: calc(100% - 200px);
+    transform: rotate(-35deg) scale(0.5);
+  }
+}

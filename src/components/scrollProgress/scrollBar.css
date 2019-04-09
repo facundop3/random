@@ -1,0 +1,18 @@
+.ScrollBarContainer{
+  margin-top: 200px;
+  transform: rotate(-90deg);
+  display:  inline-grid;
+  justify-content: inline-block;
+}
+.ScrollBarOuter{
+  width: 200px;
+  height: 10px;
+  border-radius: 5px;
+  background: grey;
+
+}
+.ScrollBarProgress{
+  border-radius: 5px;
+  height: 100%;
+  background: rebeccapurple;
+}
