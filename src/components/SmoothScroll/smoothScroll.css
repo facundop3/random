@@ -1,6 +1,5 @@
 .fixIt {
   position: fixed;
-  color: rebeccapurple;
   transition: 1s;
   /* Picture from : https://www.pexels.com/photo/photography-of-night-sky-733475/ */
   background-image: url('../../assets/stars.jpg');
@@ -15,7 +14,7 @@
 
 .rainbowBg {
   /* Picture from :https://www.pexels.com/photo/rainbow-after-sunset-237250/ */
-  background-image: url('../../assets/rainbow4.jpg');
+  /* background-image: url('../../assets/rainbow4.jpg'); */
 }
 
 .cityBg{
@@ -25,8 +24,8 @@
 
 .hackermanBg{
   /* https://media.giphy.com/media/h8EFlReFJbZny/giphy.gif */
-  background-image: url('../../assets/hackerman.gif');
-  opacity: 0 !important;
+  /* background-image: url('../../assets/hackerman.gif'); */
+  background-image: url('../../assets/monkey.gif');
 }
 
 @keyframes chickenLego {

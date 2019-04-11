@@ -3,6 +3,7 @@
   transform: rotate(-90deg);
   display:  inline-grid;
   justify-content: inline-block;
+  float: left;
 }
 .ScrollBarOuter{
   width: 200px;

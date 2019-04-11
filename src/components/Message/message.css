@@ -6,7 +6,6 @@
 
 .MessageContainer{
   max-width: 500px;
-  border: 1px solid red;
   padding: .5em;
   position: relative;
   animation-name: animateMessage;
@@ -19,12 +18,18 @@
 .MessageTitle{
   font-family: VT323;
   text-align: left;
-  color: green;
+  color: white;
 }
 
 .MessageContent{
   padding-left: 3em;
   text-align: left;
+  color: white;
+  opacity: 0;
+  animation-delay: 4s;
+  animation-duration: .5s;
+  animation-name: animateContent;
+  animation-fill-mode: forwards;
 }
 
 @keyframes animateMessage{
@@ -33,5 +38,14 @@
   }
   to{
     bottom:0;
+  }
+}
+
+@keyframes animateContent{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
