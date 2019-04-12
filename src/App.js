@@ -1,20 +1,35 @@
-import React from 'react';
-import './App.css'
-import Message from './components/Message/Message'
+import React from 'react'
+import styled from 'styled-components'
 
+import Message from './components/Message/Message'
 import SmoothScroll from './components/SmoothScroll/SmoothScroll'
 
-const sampleText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
-const App  = () => 
-    <div className="App">
-      <header className="App-header" >
-      <SmoothScroll />
-       Hello 😘
-      </header>
-      <div className="app-body">
-         <Message title="Adventure awaits 👾" message="// Now is when you scroll :) "/>
-      </div>
-    </div>
+const App  = () => {
+  const Container =  styled.div`
+      text-align: center;
+      height: 300vh;
+  `;
+  const Header = styled.header`
+      background-color: #282c34;
+      font-size: calc(10px + 2vmin);
+      color: white;
+  `;
+  const Body = styled.div`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  `;
+  return  <Container>
+            <Header>
+              <SmoothScroll/>
+              Hello 😘
+            </Header>
+            <Body>
+              <Message title="Adventure awaits 👾" message="// Now is when you scroll :) "/>
+            </Body>
+          </Container>
+}
 
 
 

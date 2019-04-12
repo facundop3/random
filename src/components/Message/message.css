@@ -4,34 +4,6 @@
   src: url('../../assets/VT323/VT323-Regular.ttf');
 }
 
-.MessageContainer{
-  max-width: 500px;
-  padding: .5em;
-  position: relative;
-  animation-name: animateMessage;
-  bottom: -1000px;
-  animation-delay: .5s;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-.MessageTitle{
-  font-family: VT323;
-  text-align: left;
-  color: white;
-}
-
-.MessageContent{
-  padding-left: 3em;
-  text-align: left;
-  color: white;
-  opacity: 0;
-  animation-delay: 4s;
-  animation-duration: .5s;
-  animation-name: animateContent;
-  animation-fill-mode: forwards;
-}
-
 @keyframes animateMessage{
   from{
     bottom: -1000px;
