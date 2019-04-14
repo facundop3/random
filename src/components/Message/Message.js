@@ -20,6 +20,8 @@ const animateContent = keyframes`
 `;
 
 const MessageContainer = styled.div`
+      top: ${props => props.zoom >= 190 ? '1em' : 'unset'};
+      position: ${props => props.zoom >= 190 ? 'fixed' : 'relative'} !important;
       max-width: 500px;
       padding: .5em;
       position: relative;
@@ -28,6 +30,7 @@ const MessageContainer = styled.div`
       animation-delay: .5s;
       animation-duration: 2s;
       animation-fill-mode: forwards;
+      transition: .5s;
   `;
 const MessageTitle = styled.h1`
       font-family: VT323;
@@ -47,7 +50,7 @@ const MessageContent = styled.p`
 
 const Message = props => {
   return (
-    <MessageContainer>
+    <MessageContainer zoom={props.zoom}>
       <MessageTitle>{props.title}</MessageTitle>
       <MessageContent>{props.message}</MessageContent>
     </MessageContainer>

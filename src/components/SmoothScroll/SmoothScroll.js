@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import styled, {keyframes} from 'styled-components'
 // Images
 import chicken from '../../assets/chicken.png'
@@ -6,9 +6,18 @@ import batman from '../../assets/batman.png'
 import unicorn from '../../assets/unicorn.png'
 import starsBg from '../../assets/stars.jpg'
 import cityBg from '../../assets/city.jpg'
-import hackermanBg from '../../assets/hackerman.gif'
-
+// import hackermanBg from '../../assets/hackerman.gif'
+// Components
 import ProgressBar from '../scrollProgress/ScrollBar'
+
+const hideTransition = keyframes`
+  from {
+    opacity:1;
+  }
+  to{
+    opacity:0.6;
+  }
+`;
 
 const floatingAnimation = keyframes`
   0%{
@@ -66,7 +75,7 @@ const Character = styled.img`
 `;
 
 const Container = styled.div`
-  position: fixed;
+  position: absolute;
   transition: 1s;
   background-image: url(${props => getBgNCharacter(props.zoom).bg});
   width: 100%;
@@ -76,6 +85,8 @@ const Container = styled.div`
   background-size: cover;
   animation-fill-mode: forwards;
   background-size: ${props => props.zoom}%  ${props => props.zoom}%;
+  animation-name: ${props => props.zoom >= 200 ? hideTransition : 'unset'};
+  animation-duration: 1s;
 `;
 
 
@@ -86,29 +97,13 @@ const getBgNCharacter = (zoom)=> {
   } else if (zoom <= 200) {
     return {bg: cityBg, character: batman}
   } else {
-    return {bg:hackermanBg, character: unicorn}
+    return {bg:cityBg, character: unicorn}
   }
 };
 
 const SmoothScroll = props =>{
-
-  useEffect(()=>{
-    window.addEventListener("scroll", handleScroll)
-    return ()=> window.removeEventListener("scroll", handleScroll);
-  })
-
-  const [currentScroll, setCurrentScroll] = useState(document.documentElement.scrollTop)
-  const [scrollIsDown, setScrollIsDown] = useState(true)
-  const [ currentZoom, setCurrentZoom ] = useState(100)
-
+  const currentZoom = props.zoom
   const [isPaused, setIsPaused] = useState(false)
-  const getScale = () => scrollIsDown ? setCurrentZoom(currentZoom + 1 ) : setCurrentZoom(document.documentElement.scrollTop? currentZoom - 1 : 100)
-
-  const handleScroll = ev => {
-    setScrollIsDown(currentScroll < document.documentElement.scrollTop)
-    setCurrentScroll(document.documentElement.scrollTop)
-    getScale()
-  }
   const handleClick = ev =>{
     setIsPaused(!isPaused)
     if(isPaused) {
@@ -121,7 +116,7 @@ const SmoothScroll = props =>{
   return (
      <Container zoom={currentZoom}>
       <Character src={getBgNCharacter(currentZoom).character} alt="Lego character"  onClick={handleClick}/>
-      <ProgressBar/>
+      <ProgressBar zoom={currentZoom}/>
      </Container>
    )
 }

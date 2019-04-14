@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -23,23 +23,18 @@ const Progress = styled.div`
     width: ${props => props.percent}%;
 `;
 const ScrollBar = props => {
-  const totalScroll = 1796
-  const [currentPercent, setCurrentPercent] = useState(0)
+  const currentScroll = props.zoom - 100
 
-  const handleScroll = ev => {
-    const percent = Math.round((document.documentElement.scrollTop/totalScroll) * 100)
-    setCurrentPercent(percent)
+  const getPercent = () => {
+    const totalScroll = 222
+    return Math.round((currentScroll/totalScroll) * 100)
+
   }
-  useEffect(()=>{
-    window.addEventListener("scroll", handleScroll)
-    return ()=> window.removeEventListener("scroll", handleScroll);
-  })
 
   return (
     <Container>
-      Randomiter
-      <OutterBar className='ScrollBarOuter'>
-        <Progress percent={currentPercent}/>
+      <OutterBar>
+        <Progress percent={getPercent()}/>
       </OutterBar>
     </Container>
   )
