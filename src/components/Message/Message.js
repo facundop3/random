@@ -20,8 +20,6 @@ const animateContent = keyframes`
 `;
 
 const MessageContainer = styled.div`
-      top: ${props => props.zoom >= 190 ? '1em' : 'unset'};
-      position: ${props => props.zoom >= 190 ? 'fixed' : 'relative'} !important;
       max-width: 500px;
       padding: .5em;
       position: relative;

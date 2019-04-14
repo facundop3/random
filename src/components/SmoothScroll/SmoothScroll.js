@@ -6,9 +6,6 @@ import batman from '../../assets/batman.png'
 import unicorn from '../../assets/unicorn.png'
 import starsBg from '../../assets/stars.jpg'
 import cityBg from '../../assets/city.jpg'
-// import hackermanBg from '../../assets/hackerman.gif'
-// Components
-import ProgressBar from '../scrollProgress/ScrollBar'
 
 const hideTransition = keyframes`
   from {
@@ -106,17 +103,20 @@ const SmoothScroll = props =>{
   const [isPaused, setIsPaused] = useState(false)
   const handleClick = ev =>{
     setIsPaused(!isPaused)
+    const character = ev.target;
     if(isPaused) {
-      ev.target.style.animationPlayState = 'running'
+      character.style.animationPlayState = 'running'
     } else {
-      ev.target.style.animationPlayState = 'paused'
+      character.style.animationPlayState = 'paused'
+      setTimeout(()=> {
+        character.style.animationPlayState = 'running'
+      }, 1000)
     }
   }
 
   return (
      <Container zoom={currentZoom}>
       <Character src={getBgNCharacter(currentZoom).character} alt="Lego character"  onClick={handleClick}/>
-      <ProgressBar zoom={currentZoom}/>
      </Container>
    )
 }
