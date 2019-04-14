@@ -1,54 +1,50 @@
 import React from 'react'
-import styled from 'styled-components'
 // Cpomponents
+import {
+          Box,
+          Header,
+          Main,
+          BaseSection
+        } from './components/baseComponents'
+
 import Message from './components/Message/Message'
+import Greetings from './components/Greetings/Greetings'
 import SmoothScroll from './components/SmoothScroll/SmoothScroll'
-import LeftBox from './components/LeftBox/LeftBox'
-import Carousel from './components/Carousel/Carousel'
-
-
 // Hooks
 import useScroll from './components/Hooks/useScroll'
 //Assets
 import hackerman from './assets/hackerman.gif'
-
-const Container =  styled.div`
-    text-align: center;
-    height: 300vh;
-`;
-const Header = styled.div`
-    background-color: #282c34;
-    font-size: calc(10px + 2vmin);
-    color: white;
-`;
-const Main = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(${hackerman});
-    background-size: contain;
-    height:100vh;
-`;
+import dance from './assets/dance.gif'
+import astrounaut from './assets/astronaut.jpg'
 
 const App  = () => {
   const currentZoom = useScroll()
-  return  <Container>
+  return  <Box height="300vh">
             <Header>
               <SmoothScroll zoom={currentZoom}/>
             </Header>
-            <Main>
+            <Main gif={hackerman}>
               <Message 
                 zoom={currentZoom}
                 title="Adventure awaits 👾" 
                 message="// Now is when you start scrolling :) "/>
             </Main>
-            <LeftBox id="scene">
-              Hey cute 😙
-            </LeftBox>
-            <Carousel>
-              sfdsdfs 
-            </Carousel>
-          </Container>
+            <BaseSection bg="#43BCCD">
+              <Box width='60%' bgColor ="#CF161C" centrate>
+                <Box bgImage={astrounaut} height="80%" width="60%" bgXP="-15vw"/>
+              </Box>
+              <Box width='40%' centrate>
+                <Greetings />
+              </Box>
+            </BaseSection>
+            <BaseSection bg="#662E9B">
+                <Box bgImage={dance} width='40%' right bgXP ="30vw" />
+            </BaseSection>
+            <BaseSection 
+              height='60'
+              bg="#F86624">
+            </BaseSection>
+          </Box>
 }
 
 
