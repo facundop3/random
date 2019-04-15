@@ -29,6 +29,10 @@ const Box =  styled.div`
     props => props.right &&
     `float: right;`
   }
+  ${
+    props => props.color && 
+    `color: ${props.color};`
+  }
 `;
 
 const Header = styled.div`
@@ -52,6 +56,10 @@ const BaseSection = styled.section`
   border: 1px solid black;
   background-color: ${props => props.bg};
   display: flex;
+  ${
+    props => props.jContent && 
+    `justify-content: ${props.jContent}; `
+  }
 `
 
 export {

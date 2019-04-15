@@ -88,7 +88,6 @@ const Container = styled.div`
 
 
 const getBgNCharacter = (zoom)=> {
-  console.log(zoom)
   if(zoom < 130) {
     return {bg: starsBg, character:chicken}
   } else if (zoom <= 200) {
