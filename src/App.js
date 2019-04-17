@@ -10,6 +10,7 @@ import {
 import Message from './components/Message/Message'
 import Greetings from './components/Greetings/Greetings'
 import SmoothScroll from './components/SmoothScroll/SmoothScroll'
+import MusicMakerStarterKit from './components/Music/MusicMakerStarterKit'
 // Hooks
 import useScroll from './components/Hooks/useScroll'
 //Assets
@@ -38,15 +39,8 @@ const App  = () => {
               </Box>
             </BaseSection>
             <BaseSection bg="#662E9B" jContent="flex-end">
-                <Box width='60%'  color="white">
-                  <h3>
-                    Never gonna give you up
-                    Never gonna let you down
-                    Never gonna run around and desert you
-                    Never gonna make you cry
-                    Never gonna say goodbye
-                    Never gonna tell a lie and hurt you
-                  </h3>
+                <Box width='60%'  color="white" centrate>
+                  <MusicMakerStarterKit />
                 </Box>
                 <Box bgImage={dance} width='40%' bgXP="35vw"/>
 
